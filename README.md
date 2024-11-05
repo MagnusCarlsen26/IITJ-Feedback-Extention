@@ -7,7 +7,7 @@ The IITJ Feedback Extension is a Chrome extension designed to enhance the feedba
 Follow these steps to install the IIT Feedback Extension:
 
 1. **Download the Repository:**
-   https://github.com/Cyphernk13/IIT-Feedback-Extension/archive/refs/heads/main.zip
+   https://github.com/MagnusCarlsen26/IITJ-Feedback-Extention/archive/refs/heads/main.zip
 
 2. **Access the Extensions Page:**
    In the top right corner of Chrome, click on the three dots (menu) > **More Tools** > **Extensions**. Alternatively, you can type `chrome://extensions/` in the address bar and hit Enter.
