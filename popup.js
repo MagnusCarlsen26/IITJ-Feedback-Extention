@@ -21,6 +21,7 @@ function sendFeedbackType(type) {
 }
 
 function fillFeedback(type) {
+  const senti = type
   fetch("https://erp.iitj.ac.in/AcadResearch/getsubjectlistforfeedback.htm?order=asc&_=1730831282661", {
     headers: {
       "accept": "application/json, text/javascript, */*; q=0.01",
@@ -87,13 +88,12 @@ function fillFeedback(type) {
     };
 
 
-    console.log(count)
 
     var typeOfReview;
-
-    if ( typeOfReview === "positive" ) typeOfReview = 5
-    if ( typeOfReview === "neutral" ) typeOfReview = 3
-    if ( typeOfReview === "negative" ) typeOfReview = 0
+    console.log(type)
+    if ( senti === "positive" ) typeOfReview = 5
+    if ( senti === "neutral" ) typeOfReview = 3
+    if ( senti === "negative" ) typeOfReview = 0
 
     const responses = Array(count).fill(typeOfReview); // Fill first 30 responses with 5
     responses.push('The course was challenging but fair, with interesting case studies.'); // Add comment
