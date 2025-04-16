@@ -12,7 +12,7 @@ IITJFeedback.Subjects.determineSubjectType = function(subject) {
     },
     "tutorial": {
       type: "T",
-      count: 34
+      count: 37
     },
     "practical": {
       type: "P",

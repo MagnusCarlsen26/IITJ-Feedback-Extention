@@ -28,6 +28,9 @@ IITJFeedback.API.submitFeedback = async function(subject, subjectType, sentiment
     payload.append(`response_${index + 1}`, response);
   });
 
+  // Log the payload
+  console.log("Payload being sent:", Object.fromEntries(payload));
+
   try {
     // Send the request
     const response = await fetch("https://erp.iitj.ac.in/AcadResearch/insertfeedback.htm", {

@@ -22,7 +22,6 @@
         "utils/api/fetchSubjects.js",
         "utils/api/submitFeedback.js",
         "utils/subjects/determineSubjectType.js",
-        "utils/subjects/processSubjects.js",
         "main.js"
       ]
     }

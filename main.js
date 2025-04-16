@@ -33,10 +33,40 @@ async function fillFeedback(type) {
   console.log("Starting feedback process for type:", type);
   try {
     const subjects = await IITJFeedback.API.fetchSubjects();
-    console.log("Subjects drgjfetched:", subjects);
-    // const result = await IITJFeedback.Subjects.processSubjects(subjects, type);
-    // console.log("Feedback process completed:", result);
-    return result;
+    const pendingSubmissions = [];
+    
+    // First loop: Collect all subjects and their types
+    for (const subject of subjects) {
+      const subjectType = IITJFeedback.Subjects.determineSubjectType(subject);
+      if (subjectType) {
+        pendingSubmissions.push({
+          subject: subject,
+          subjectType: subjectType
+        });
+      }
+    }
+    
+    console.log("Collected submissions:", pendingSubmissions);
+    const results = [];
+
+    // Second loop: Submit feedback for all collected subjects
+    for (const submission of pendingSubmissions) {
+
+      if ( submission.subject.course_code !== "LAL4060" ) continue
+      const feedbackResult = await IITJFeedback.API.submitFeedback(
+        submission.subject, 
+        submission.subjectType, 
+        type
+      );
+      results.push({
+        subject: submission.subject,
+        subjectType: submission.subjectType,
+        feedbackResult: feedbackResult
+      });
+    }
+    
+    console.log("Feedback process completed:", results);
+    return results;
   } catch (error) {
     console.error('There was a problem with the feedback operation:', error);
   }
