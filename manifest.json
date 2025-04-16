@@ -18,9 +18,11 @@
       "matches": ["*://erp.iitj.ac.in/*"],
       "js": [
         "namespace.js",
-        "utils/sentiment/sentiment.js",
-        "utils/api/api.js",
-        "utils/subjects/subjects.js",
+        "utils/sentiment/getSentimentValue.js",
+        "utils/api/fetchSubjects.js",
+        "utils/api/submitFeedback.js",
+        "utils/subjects/determineSubjectType.js",
+        "utils/subjects/processSubjects.js",
         "main.js"
       ]
     }

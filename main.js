@@ -33,7 +33,7 @@ async function fillFeedback(type) {
   console.log("Starting feedback process for type:", type);
   try {
     const subjects = await IITJFeedback.API.fetchSubjects();
-    console.log("Subjectwes fetched:", subjects);
+    console.log("Subjects drgjfetched:", subjects);
     // const result = await IITJFeedback.Subjects.processSubjects(subjects, type);
     // console.log("Feedback process completed:", result);
     return result;
