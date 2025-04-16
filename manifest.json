@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "Automatically fills out feedback forms on IITJ ERP.",
   "permissions": ["activeTab", "scripting"],
-  "host_permissions": ["*://erp.iitj.ac.in/IIT_ERP3/showmenu.htm*"],
+  "host_permissions": ["*://erp.iitj.ac.in/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -15,8 +15,14 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://erp.iitj.ac.in/IIT_ERP3/showmenu.htm*"],
-      "js": ["content.js"]
+      "matches": ["*://erp.iitj.ac.in/*"],
+      "js": [
+        "namespace.js",
+        "utils/sentiment/sentiment.js",
+        "utils/api/api.js",
+        "utils/subjects/subjects.js",
+        "main.js"
+      ]
     }
   ]
 }
